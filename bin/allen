@@ -1,0 +1,7 @@
+#! /usr/bin/env node
+
+const program = require('commander');
+program
+  .usage('<command> [项目名称]') // 用户使用提示
+  .command('init', '创建新项目') // 如果没有action 会在同目录下找x-init文件执行
+  .parse(process.argv)

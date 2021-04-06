@@ -1,0 +1,46 @@
+{
+  "name": "eagle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "eagle": "bin/eagle",
+    "eagle-init": "bin/eagle-init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GTliangming/Eagle.git"
+  },
+  "author": "梁潇洒",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GTliangming/Eagle/issues"
+  },
+  "homepage": "https://github.com/GTliangming/Eagle#readme",
+  "keywords": [
+    "node",
+    "node.js",
+    "express",
+    "react.js"
+  ],
+  "devDependencies": {
+    "@types/node": "^14.14.17"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "commander": "^6.2.1",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.3",
+    "lmtestpack": "^1.0.8",
+    "log-symbols": "^4.0.0",
+    "ora": "^5.3.0",
+    "spinnies": "^0.5.1"
+  }
+}
