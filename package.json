@@ -1,5 +1,5 @@
 {
-  "name": "stupid-bird",
+  "name": "bird",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "eagle": "bin/eagle",
-    "eagle-init": "bin/eagle-init"
+    "bird": "bin/eagle",
+    "bird-init": "bin/eagle-init"
   },
   "repository": {
     "type": "git",
