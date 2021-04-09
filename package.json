@@ -9,8 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "bird": "bin/eagle",
-    "bird-init": "bin/eagle-init"
+    "bird": "bin/bird",
+    "bird-init": "bin/bird-init"
   },
   "repository": {
     "type": "git",
