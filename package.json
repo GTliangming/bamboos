@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GTliangming/Eagle.git"
+    "url": "git+https://github.com/GTliangming/bamboos.git"
   },
   "author": "梁潇洒",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GTliangming/Eagle/issues"
+    "url": "https://github.com/GTliangming/bamboos/issues"
   },
-  "homepage": "https://github.com/GTliangming/Eagle#readme",
+  "homepage": "https://github.com/GTliangming/bamboos#readme",
   "keywords": [
     "node",
     "node.js",
