@@ -5,7 +5,7 @@ const logSymbols = require("log-symbols");
 const chalk = require("chalk");
 const CONST = require('../utils/conf')
 const Spinnies = require("spinnies")
-module.exports = function (target, url, branch) {
+module.exports = function (target, url, branch, projectName) {
     // const spinner = ora(`正在下载项目模板，源地址：${url}#${branch}`)
     // target = path.join(CONST.TEMPLATE_NAME)
     // spinner.start()
@@ -28,7 +28,7 @@ module.exports = function (target, url, branch) {
     const spinner = { interval: 80, frames: ['🍇', '🍈', '🍉', '🍋'] }
     const spinnies = new Spinnies({ color: 'blue', succeedColor: 'green', spinner });
     spinnies.add('spinner-1', { text: `正在下载项目模板，源地址：${url}#${branch}` });
-    target = path.join(CONST.TEMPLATE_NAME)   
+    target = path.join(projectName)
     return new Promise((resolve, reject) => {
         download(`direct:${url}#${branch}`,
             target, { clone: true }, (err) => {
