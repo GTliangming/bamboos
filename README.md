@@ -13,7 +13,7 @@ use
 ```
 bamboos --help
 
-bamboos init <projectname>
+bamboos-init <projectname>
 
 ```
 
