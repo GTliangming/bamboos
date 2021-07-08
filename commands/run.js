@@ -3,7 +3,7 @@ const chalk = require("chalk");
 
 module.exports = async function (cwd, callback, executable = 'npm', args = ['start']) {
     console.log(chalk.greenBright("正在运行项目……\n"));
-    // 执行executable args 对应到默认参数即 npm install 安装依赖
+    // 执行executable args 对应到默认参数即 npm start 安装依赖
     await new Promise((resolve, reject) => {
         const installProcess =
             spawn(executable, args, { cwd: cwd, stdio: "inherit", shell: true });
