@@ -1,6 +1,6 @@
 {
-  "name": "bamboos",
-  "version": "1.0.3",
+  "name": "bamboos-cli",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
