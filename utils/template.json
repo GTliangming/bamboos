@@ -25,5 +25,12 @@
     "branch": "feature/next",
     "git": "https://github.com/GTliangming/bamboos.git",
     "options": []
+  },
+  "springboot": {
+    "name": "基于springboot的java项目",
+    "value": "springboot",
+    "branch": "feature/javaproject",
+    "git": "https://github.com/GTliangming/bamboos.git",
+    "options": []
   }
 }
