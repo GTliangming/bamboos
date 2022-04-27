@@ -221,7 +221,7 @@ const runProject = async (projectRoot) => {
 
 
 function afterError(rootName) {
-  if (rootName) {
-    rm(rootName);
-  }
+  // if (rootName) {
+  //   rm(rootName);
+  // }
 }
