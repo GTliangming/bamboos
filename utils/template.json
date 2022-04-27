@@ -18,5 +18,12 @@
     "branch": "feature/template",
     "git": "https://github.com/GTliangming/api-admin.git",
     "options": []
+  },
+  "next": {
+    "name": "基于next.js的react项目",
+    "value": "next",
+    "branch": "feature/next",
+    "git": "https://github.com/GTliangming/bamboos.git",
+    "options": []
   }
 }
