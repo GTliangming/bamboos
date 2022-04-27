@@ -1,47 +1,37 @@
 {
-  "name": "bamboos-cli",
-  "version": "1.0.1",
-  "description": "bamboos-cli",
-  "main": "index.js",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "bamboos": "bin/bamboos",
-    "bamboos-init": "bin/bamboos-init"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GTliangming/bamboos.git"
-  },
-  "author": "梁潇洒",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GTliangming/bamboos/issues"
-  },
-  "homepage": "https://github.com/GTliangming/bamboos#readme",
-  "keywords": [
-    "node",
-    "node.js",
-    "express",
-    "react.js"
-  ],
-  "devDependencies": {
-    "@types/node": "^14.14.17"
+    "dev": "yarn && next -p 3499",
+    "build": "next build",
+    "start": "next start -p 3499",
+    "lint": "next lint"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
-    "clear": "^0.1.0",
-    "commander": "^6.2.1",
-    "download-git-repo": "^3.0.2",
-    "figlet": "^1.5.0",
-    "inquirer": "^7.3.3",
-    "lmtestpack": "^1.0.8",
-    "log-symbols": "^4.0.0",
-    "ora": "^5.3.0",
-    "rimraf": "^3.0.2",
-    "spinnies": "^0.5.1"
+    "next": "11.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "webpack": "5.28.0",
+    "styled-components": "5.2.1",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-proposal-decorators": "7.13.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
+    "@babel/plugin-transform-named-capturing-groups-regex": "^7.12.13",
+    "@bamboos/eslint-config": "^1.0.1",
+    "@types/node": "14.10.1",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
+    "@types/styled-components": "5.1.9",
+    "babel-plugin-styled-components": "1.12.0",
+    "babel-plugin-styled-components-px2rem": "^1.5.5",
+    "@types/cookie": "0.4.0",
+    "@types/express": "^4.17.11",
+    "eslint": "7.32.0",
+    "file-loader": "^6.2.0",
+    "url-loader": "4.1.1"
   }
 }
