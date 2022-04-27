@@ -58,7 +58,7 @@ export default class MyApp extends App<AppProps> {
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
           />
-          <title>{"飞竹 - soar bamboos"}</title>
+          <title>{"bamboos"}</title>
         </Head>
         {SHOW_NAV ? <Layout path={path} query={query} userInfo={customerInfo} isShowNav={SHOW_NAV} language={language}>
           <Component {...pageProps} localeObj={localeObj} />
