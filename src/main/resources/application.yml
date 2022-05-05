@@ -5,6 +5,8 @@ spring:
     username: root
     password: lmzs1111
     driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    static-path-pattern: /static/**
 server:
   port: 8083
 

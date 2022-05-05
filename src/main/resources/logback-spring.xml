@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 日志框架配置-->
+
+<configuration>
+
+    <!--    导入其他配置文件，作为预设-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!--    <property name="CONSOLE_LOG_PATTERN" value="-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta}  %clr(-&#45;&#45;){faint} %clr([%X{reqID}]){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>-->
+
+    <!--    Appender作为日志打印器配置-->
+    <!--    ch.qos.logback.core.ConsoleAppender是专门用于控制台的Appender-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>${CONSOLE_LOG_CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <!--    ch.qos.logback.core.rolling.RollingFileAppender是专门用于文件日志，支持滚动-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>${FILE_LOG_CHARSET}</charset>
+        </encoder>
+        <!--    自定义滚动策略，防止日志文件无限变大，即定义日志文件写到什么时候为止，重新创建一个新的文件-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--    文件的保存位置以及文件命名规则，%d{yyyy-MM-dd}表示时间，i表示当天的第N个日志文件-->
+            <FileNamePattern>log/%d{yyyy-MM-dd}-spring-%i.log</FileNamePattern>
+            <!--    到期自动清理日志文件-->
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <!--    最大保留时间-->
+            <maxHistory>7</maxHistory>
+            <!--    最大单个日志文件大小-->
+            <maxFileSize>10MB</maxFileSize>
+        </rollingPolicy>
+    </appender>
+
+
+    <!--    指定日志输出级别，以及启用的Appender,-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
