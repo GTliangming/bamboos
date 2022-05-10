@@ -4,6 +4,8 @@ import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
 import com.example.taroapi.common.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,6 +19,8 @@ import java.util.List;
 /**
  * 文件上传
  */
+
+@Api(tags = "文件上传",description = "包括文件上传以及根据文件flag获取文件") // swagger注解
 @RestController
 @RequestMapping("/files")
 public class FileController {
@@ -33,6 +37,7 @@ public class FileController {
      * @return
      * @throws IOException
      */
+    @ApiOperation("上传文件")
     @PostMapping("/upload")
     public Result<?> upload(MultipartFile file) throws IOException {
         System.out.print("upload----------");
@@ -51,6 +56,7 @@ public class FileController {
         return  Result.success(ip+":"+port+"/files/"+flag);
     }
 
+    @ApiOperation("获取文件")
     @GetMapping("/{flag}")
     public void getFiles(@PathVariable String flag, HttpServletResponse response){
         // 新建一个输出流对象

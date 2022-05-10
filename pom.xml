@@ -16,6 +16,30 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+<!--    分别配置生产和开发两套环境-->
+    <profiles>
+<!--        开发-->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <environment>dev</environment>
+            </properties>
+        </profile>
+<!--        生产-->
+        <profile>
+            <id>prod</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <environment>prod</environment>
+            </properties>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -78,7 +102,12 @@
             <artifactId>hutool-all</artifactId>
             <version>5.7.22</version>
         </dependency>
-
+<!--        swagger-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
         <!--        <dependency>-->
         <!--            <groupId>org.springframework.boot</groupId>-->
@@ -88,6 +117,29 @@
 
     <build>
         <finalName>taroapi</finalName>
+
+        <resources>
+        <!--  排除配置文件-->
+            <resource>
+            <!-- 排除目录-->
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <!--   通配符匹配所有配置文件-->
+                    <exclude>application*.yml</exclude>
+                </excludes>
+            </resource>
+        <!--  根据条件引入打包所需的文件和配置 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>application.yml</include>
+                    <include>application-${environment}.yml</include>
+                </includes>
+            </resource>
+
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

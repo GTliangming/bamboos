@@ -1,10 +1,13 @@
-package com.example.taroapi.common.config;
+package com.example.taroapi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -17,10 +20,17 @@ public class CorsConfig {
 
     private CorsConfiguration buildConfig() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*"); // 1 设置访问源地址
+        corsConfiguration.setAllowCredentials(true);  //sessionid 多次访问一致
+
+
+        // 允许访问的客户端域名
+        List<String> allowedOriginPatterns = new ArrayList<>();
+
+        allowedOriginPatterns.add("*");
+        corsConfiguration.setAllowedOriginPatterns(allowedOriginPatterns);
+//        corsConfiguration.addAllowedOrigin("*"); // 1 设置访问源地址
         corsConfiguration.addAllowedHeader("*"); // 2 设置访问源请求头
         corsConfiguration.addAllowedMethod("*"); // 3 设置访问源请求方法
-        corsConfiguration.setMaxAge(MAX_AGE);
         return corsConfiguration;
     }
     @Bean
